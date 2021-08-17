@@ -31,6 +31,51 @@ code {
   gap: 1rem;
 }
 
-/* .nothing-found {
-  white-space: nowrap;
-} */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.item-price {
+  font-size: 1.3rem;
+}
+
+.cart {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0.5rem;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .cart {
+    top: 5rem;
+    bottom: unset;
+  }
+}
+
+.order-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff3e0;
+  width: 50rem;
+  max-width: 95%;
+}
+
+.icon-dark-orange {
+  color: #e65100;
+  cursor: pointer;
+}
+
+.close-cart {
+  cursor: pointer;
+}
