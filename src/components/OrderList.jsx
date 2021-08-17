@@ -1,7 +1,10 @@
 import { OrderItem } from "./OrderItem";
 
 function OrderList(props) {
-  const  { order = [], handleVisibleBasket= Function.prototype } = props;
+  const  { order = [], 
+    handleVisibleBasket = Function.prototype,
+    removeFromBasket = Function.prototype
+  } = props;
 
   const totalValue = order.reduce((sum, el) => {
     return sum + el.price * el.quantity;
@@ -16,7 +19,7 @@ function OrderList(props) {
       </li>
       {
         order.length ? 
-          order.map((el) => <OrderItem  key={el.id} {...el}/>)
+          order.map((el) => <OrderItem  key={el.id} removeFromBasket={removeFromBasket} {...el}/>)
           : <li className="collection-item active orange darken-4">пуста</li>
       }
       

@@ -35,6 +35,13 @@ function Shop() {
     }
   };
 
+  const removeFromBasket = (goodId) => {
+    const filteredOrder = order.filter((el) => el.id !== goodId);
+    setOrder(filteredOrder);
+  }
+
+  
+
   const handleVisibleBasket = () => {
     return setVisible(!isVisibleBasket);
   }
@@ -46,7 +53,6 @@ function Shop() {
       },
     }).then((response) => response.json()) 
     .then((data) => {
-      console.log(data.featured);
       data.featured  && setGoods(data.featured);
       setLoading(false);
     })
@@ -56,7 +62,10 @@ function Shop() {
     <main className="container content">
       <Cart quantity={order.length} handleVisibleBasket={handleVisibleBasket}/>
       {loading ? <Preloader /> : <ItemsList goods={goods} addToBasket={addToBasket}/>}
-      {isVisibleBasket && <OrderList order={order} handleVisibleBasket={handleVisibleBasket}/> }
+      {isVisibleBasket && 
+        <OrderList order={order} 
+          handleVisibleBasket={handleVisibleBasket}
+          removeFromBasket={removeFromBasket} /> }
     </main>
   );
 }

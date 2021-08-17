@@ -69,6 +69,7 @@ code {
   background-color: #fff3e0;
   width: 50rem;
   max-width: 95%;
+  animation: show 300ms ease-in-out;
 }
 
 .icon-dark-orange {
@@ -78,4 +79,15 @@ code {
 
 .close-cart {
   cursor: pointer;
+}
+
+@keyframes show {
+  from {
+    top: 70%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
 }
