@@ -40,7 +40,20 @@ function Shop() {
     setOrder(filteredOrder);
   }
 
-  
+  const changeItemQuantity = (goodId, change) => {
+    const changedOrder = order.map((el) => {
+      if (el.id === goodId) {
+        if (change === 'inc') {
+          el.quantity += 1;
+        } else if (change === 'dec' && el.quantity > 1) {
+          el.quantity -= 1;
+        }
+        return {...el};
+      } else {
+        return el;
+      }});
+    setOrder(changedOrder);
+  }
 
   const handleVisibleBasket = () => {
     return setVisible(!isVisibleBasket);
@@ -65,7 +78,8 @@ function Shop() {
       {isVisibleBasket && 
         <OrderList order={order} 
           handleVisibleBasket={handleVisibleBasket}
-          removeFromBasket={removeFromBasket} /> }
+          removeFromBasket={removeFromBasket}
+          changeItemQuantity={changeItemQuantity} /> }
     </main>
   );
 }

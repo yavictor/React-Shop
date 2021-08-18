@@ -72,12 +72,37 @@ code {
   animation: show 300ms ease-in-out;
 }
 
-.icon-dark-orange {
-  color: #e65100;
-  cursor: pointer;
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.close-cart {
+.order-item .left-block {
+  flex: 1;
+}
+
+.order-item .center-block {
+  flex: 1;
+  text-align: center;
+}
+
+.order-item .right-block {
+  flex: 1;
+  text-align: center;
+}
+
+.border-round {
+  margin: 0 0.5rem;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+}
+
+.icon-dark-orange {
+  color: #e65100;
+}
+
+.material-icons {
   cursor: pointer;
 }
 
