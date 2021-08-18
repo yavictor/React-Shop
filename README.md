@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+#  React Shop App
+
+View on Github Pages
+[https://yavictor.github.io/React-Shop](https://yavictor.github.io/React-Shop)
+Simple single page shop, based on fortniteapi.io goods, created with ReactJS and MaterializeCSS for layout.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
