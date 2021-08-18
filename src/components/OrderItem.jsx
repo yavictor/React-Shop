@@ -14,7 +14,7 @@ function OrderItem(props) {
       <div className="left-block">
         <img src={icon} alt={name} className="circle"></img>
         <span className="title">{name}</span>
-        <p>Цена: {price}</p>
+        <p>Цена: {price} руб.</p>
       </div>
 
       <div className="center-block">

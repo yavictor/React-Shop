@@ -31,6 +31,7 @@ function OrderList(props) {
       
       <li className="collection-item active orange darken-4">
         Общая стоимость товаров: {totalValue} руб.
+        <button className="secondary-content btn-small checkout-btn">Оформить</button>
       </li>
     </ul>
   );
