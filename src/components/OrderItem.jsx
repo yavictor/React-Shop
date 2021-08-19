@@ -1,13 +1,9 @@
+import { useContext } from 'react';
+import { ShopContext } from '../context';
+
 function OrderItem(props) {
-  const {
-    id,
-    name,
-    price,
-    quantity,
-    icon,
-    removeFromBasket = Function.prototype,
-    changeItemQuantity = Function.prototype,
-  } = props;
+  const { id, name, price, quantity, icon } = props;
+  const { removeFromBasket, changeItemQuantity } = useContext(ShopContext);
 
   return (
     <li className="collection-item avatar order-item">
@@ -18,23 +14,32 @@ function OrderItem(props) {
       </div>
 
       <div className="center-block">
-        <i onClick={() => changeItemQuantity(id, 'dec')} 
-        className="tiny material-icons border-round">remove</i> 
+        <i
+          onClick={() => changeItemQuantity(id, 'dec')}
+          className="tiny material-icons border-round"
+        >
+          remove
+        </i>
         {quantity}
-        <i onClick={() => changeItemQuantity(id, 'inc')} 
-        className="tiny material-icons border-round">add</i> 
-
+        <i
+          onClick={() => changeItemQuantity(id, 'inc')}
+          className="tiny material-icons border-round"
+        >
+          add
+        </i>
       </div>
       <div className="right-block">
-      = {price * quantity} руб.
+        = {price * quantity} руб.
         <span className="secondary-content right">
-          <i className="material-icons icon-dark-orange"
+          <i
+            className="material-icons icon-dark-orange"
             onClick={() => removeFromBasket(id)}
-          >clear</i>
+          >
+            clear
+          </i>
         </span>
       </div>
     </li>
-
   );
 }
 

@@ -1,12 +1,15 @@
 import { Header } from './components/Header';
 import { Shop } from './components/Shop';
 import { Footer } from './components/Footer';
+import { ContextPrvider } from './context';
 
 function App() {
   return (
     <>
       <Header />
-      <Shop />
+      <ContextPrvider>
+        <Shop />
+      </ContextPrvider>      
       <Footer />
     </>
   );
